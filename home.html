@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="root1"></div>
+    <div id="root3"></div>
+    <script type="text/babel">
+    /*
+    function work(){
+    	return console.log("hello");
+    }
+    const name="harkirat";
+    const element = <h1>this is the element,{work()}</h1>;
+     ReactDOM.render(
+     		element,document.getElementById('root')
+     	);
+     */
+     /*
+     function Work(){
+     	return <h1>Hello again</h1>
+     }
+
+     ReactDOM.render(
+     	<Work />,document.getElementById('root')
+     );
+	
+	const lastname ="ghotra";
+	//const element = <h1>Hello Harkirat {work()}</h1>;
+	/*
+	function work(){
+		console.log("hello world");
+	}
+	
+	function Work(props){
+		return <div>
+				<h1>Hello Rooma</h1>
+				<p>Hello Harkirat</p>
+				<h2>{props.name}</h2>
+				</div>
+				;
+	}
+
+	ReactDOM.render(
+		<Work name="Kaka"/>,document.getElementById('root')
+	);
+*/
+/*
+    function Work(){
+       return console.log("hello");
+    }
+    //creating a component in function 
+    function Com(){
+        return (
+            <ul>
+                <li>Menu1</li>
+                <li>Menu2</li>
+            </ul>
+            );
+    }
+    //we can also create variable where we define tag
+    var element = <h1>Hello again {Work()}</h1>;
+
+    // passing the props 
+
+    function Property(props){
+        return <h1>Hello {props.name}</h1>;
+    }
+    
+    ReactDOM.render(
+        <Property name="kaka" />,document.getElementById('root')
+        );
+    
+    function Welcome(props){
+        return <h1>Hello {props.name}</h1>;
+    }
+
+    function App(){
+        return (
+            <div>
+                <Welcome name="kaka" />
+                <Welcome name="Pawan" />
+                <Welcome name="papa" />
+            </div>
+        );
+    }
+    ReactDOM.render(
+        <App />,document.getElementById('root1')
+    );
+*/
+function Comment (props){
+    return(
+        <div className="Comment">
+            <Info name1={props.name}/>
+            <Title title1={props.title}/>
+            <Url url1={props.url}/>
+        </div>
+    );
+}
+function Info(props){
+    return (
+        <div className="Info">
+            <h1>Hello {props.name1}</h1>
+        </div>
+    );
+}
+function Title(props){
+    return (
+        <div className="Title">
+            <p>Hello agaun kaka {props.title1}</p>
+        </div>
+    );
+}
+function Url(props){
+    return (
+        <div className="Url">
+            <p>Bye have some rest {props.url1}</p>
+        </div>
+    );
+}
+const element= {
+    name :"Harkirat",
+    title:"Becoming developer",
+    url: "https;//"
+}
+
+ReactDOM.render(
+    <Comment 
+            name={element.name}
+            title={element.title}
+            url={element.url}/>
+            ,document.getElementById('root3')
+);
+    </script>
+  </body>
+</html>
