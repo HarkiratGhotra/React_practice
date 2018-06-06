@@ -11,6 +11,7 @@
     <div id="root"></div>
     <div id="root1"></div>
     <div id="root3"></div>
+    <div id="root4"></div>
     <script type="text/babel">
     /*
     function work(){
@@ -94,6 +95,7 @@
         <App />,document.getElementById('root1')
     );
 */
+/*
 function Comment (props){
     return(
         <div className="Comment">
@@ -137,6 +139,147 @@ ReactDOM.render(
             url={element.url}/>
             ,document.getElementById('root3')
 );
+*/
+/*
+function Head(){
+    return(
+        <div className="Head">
+            <Welcome name="Kulwinder"/>
+            <Welcome job="professor"/>
+            <Welcome salary="$100000"/>
+        </div>
+    );
+}
+function Welcome(props){
+    return (
+        <div className="Welcome">
+            <h1>{props.name}</h1>
+            <p>{props.job}</p>
+            <p>{props.salary}</p>
+        </div>
+    );
+}
+function Work(props){
+    return (
+        <div className="Work">
+        <Work1 user={props.name}/>
+        <Work2 work2Title={props.title}/>
+        <Work3 headerwork3={props.header1}/>
+        </div>
+    );
+}
+function Work3(props){
+    return(
+        <div className="Work3">
+            <select>
+                <option value="volvo">Volvo {props.headerwork3}</option>
+                <option value="saab">Saab</option>
+                <option value="car">car</option>
+            </select>
+        </div>
+    );
+}
+function Work2(props){
+    return(
+        <div className="Work2">
+            <ul>
+                <li>Hello {props.work2Title}</li>
+                <li>Bye</li>
+                <li>Hello again</li>
+            </ul>
+        </div>
+    );
+}
+function Work1(props){
+    return (<h1>Hello kaka {props.user}</h1>);
+}
+function Fun(){
+    return(<p>Hello Rooma</p>);
+}
+const element ={
+    title2:"This is the text",
+    header:"Header"
+};
+ReactDOM.render(
+    <Work 
+        name="Harkirat"
+        title={element.title2}
+        header1={element.header}/>,document.getElementById('root4')
+);
+ReactDOM.render(
+    <Head />,document.getElementById('root3')
+);
+ReactDOM.render(
+    <Fun />, document.getElementById('root1')
+);
+*/
+/*
+class Clock extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={name:"harkirat"};
+    }
+    render(){
+        return (
+            <div className="Clock">
+                <h1>Hello world {this.state.name}</h1>
+                
+            </div>
+        );
+    }
+
+}
+ReactDOM.render(
+    <Clock />,document.getElementById('root')
+);
+
+*/
+class Clock extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={name:"Harkirat"};
+    }
+    render(){
+        return(
+            <div className="Clock">
+            <h1>Hello {this.state.name}</h1>
+            </div>
+            );
+    }
+}
+function App(props){
+    return (
+        <div className="App">
+        <Clock />
+        <Header />
+        </div>
+    );
+}
+
+class Header extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={name:"Papa",title:"job"};
+        //this.click1=this.click1.bind(this);
+    }
+Click1(p){
+    alert(p);
+}
+handleClick(e){
+    alert("Hello");
+}
+    render(){
+        return(
+            <div>
+            <button onClick={this.handleClick.bind(this)}>Click me</button>
+            </div>
+            );
+    }
+}
+ReactDOM.render(
+    <App />,document.getElementById('root')
+);
+
     </script>
   </body>
 </html>
